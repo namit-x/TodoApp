@@ -12,8 +12,7 @@ function App() {
   const [TodoList, setTodoList] = useState([])
   const [finishList, setFinishList] = useState([])
   const [oldList, setOldList] = useState([])
-  const [allRid, setAllRid] = useState([])
-  const [RidList, setRidList] = useState([])
+  // const [RidList, setRidList] = useState([])
 
   useEffect(() => {
     if (localStorage.getItem('todos')) {
@@ -26,11 +25,9 @@ function App() {
     }
     if (localStorage.getItem('RID')) {
       let newRidList = JSON.parse(localStorage.getItem('RID'))
-      setRidList(newRidList)
+      // setRidList(newRidList)
     }
   }, [])
-
-  // localStorage.clear()
 
   const handleClick = (e) => {
 
@@ -131,7 +128,6 @@ function App() {
     }
     if (!e.target.checked) {
       let oldTodos = storeList()
-      console.log(oldTodos)
       setTodoList(oldTodos)
     }
   }
@@ -174,7 +170,7 @@ function App() {
                 <span className='text-xl'>Add a Todo</span>
               </div>
 
-              {/* KHOJO */}
+              {/* Add Bar */}
 
               <div className='flex gap-4 items-center w-full justify-around'>
 
